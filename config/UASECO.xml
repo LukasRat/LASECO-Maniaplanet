@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<settings>
+	<!--
+	Setup for connection to the dedicated server.
+	Inside Docker Compose, the dedicated server is reachable by its service name.
+	//-->
+	<dedicated_server>
+		<login>SuperAdmin</login>
+		<password>YOUR_PASSWORD_HERE</password>
+		<ip>dedicated</ip>
+		<port>5000</port>
+		<timeout>180</timeout>
+	</dedicated_server>
+
+	<masteradmins>
+		<tmlogin>YOUR_LOGIN_HERE</tmlogin>
+	</masteradmins>
+
+	<!--
+	Database Server settings.
+	"database" is the MariaDB service name defined in docker-compose.yml
+	//-->
+	<dbms>
+		<host>database</host>
+		<login>uaseco</login>
+		<password>YOUR_PASSWORD_HERE</password>
+		<database>uaseco</database>
+		<table_prefix>uaseco_</table_prefix>
+	</dbms>
+
+	<!--
+	Set to contact (email, ICQ, etc) to show in /server command
+	//-->
+	<admin_contact>YOUR@EMAIL.COM</admin_contact>
+
+	<!--
+	To protect all "/admin" commands you should setup a unlock password
+	//-->
+	<lock_password></lock_password>
+
+	<!--
+	Set to 'false' to log passwords in the logfile
+	//-->
+	<mask_password>true</mask_password>
+
+	<!--
+	Path where the XML stripling status file is stored (inside the container)
+	//-->
+	<stripling_path>cache/stripling.xml</stripling_path>
+
+	<!--
+	Full path to the dedicated server installation inside the container.
+	The dedicated server image from ghcr.io/skorlok/expansion:mpserver installs to /app/dedicated/
+	//-->
+	<dedicated_installation>/app/dedicated/</dedicated_installation>
+
+	<!--
+	MapList used by the dedicated server (relative to UserData/Maps/)
+	//-->
+	<default_maplist>MatchSettings/maplist.txt</default_maplist>
+	<writemaplist_random>true</writemaplist_random>
+
+	<!-- If you use an external tool to add maps, set this to 'true' -->
+	<automatic_refresh_maplist>false</automatic_refresh_maplist>
+
+	<!--
+	Map history buffer size
+	//-->
+	<max_history_entries>20</max_history_entries>
+
+	<!--
+	Minimum records required for a player to be ranked
+	//-->
+	<server_rank_min_records>3</server_rank_min_records>
+
+	<!--
+	Path where map thumbnails are stored (leave as-is for Docker)
+	//-->
+	<mapimages_path>cache/mapimages/</mapimages_path>
+
+	<adminops_file>config/adminops.xml</adminops_file>
+	<bannedips_file>config/bannedips.xml</bannedips_file>
+
+	<!--
+	Stored in the dedicated server's UserData/Config/ folder
+	-->
+	<blacklist_file>blacklist.txt</blacklist_file>
+	<guestlist_file>guestlist.txt</guestlist_file>
+
+	<log_all_chat>false</log_all_chat>
+	<chatpmlog_times>true</chatpmlog_times>
+
+	<!--
+	2 = in message window, 1 = in chat, 0 = none
+	//-->
+	<show_playtime>1</show_playtime>
+
+	<!--
+	2 = in message window, 1 = in chat, 0 = none
+	//-->
+	<show_curmap>0</show_curmap>
+
+	<lists_colornicks>true</lists_colornicks>
+	<lists_colormaps>true</lists_colormaps>
+	<global_win_multiple>50</global_win_multiple>
+
+	<admin_client_version></admin_client_version>
+	<player_client_version></player_client_version>
+
+	<afk_force_spec>true</afk_force_spec>
+	<clickable_lists>true</clickable_lists>
+	<show_rec_logins>true</show_rec_logins>
+
+	<!--
+	True = in message window, False = in chat
+	//-->
+	<rounds_in_window>false</rounds_in_window>
+
+	<!--
+	Timeout of the message window in seconds
+	//-->
+	<window_timeout>6</window_timeout>
+
+	<colors>
+		<error>$F00$I</error>
+		<welcome>$F00</welcome>
+		<server>$FF0</server>
+		<highlite>$FFF</highlite>
+		<timelite>$BBB</timelite>
+		<record>$0F3</record>
+		<emotic>$FA0</emotic>
+		<music>$D80</music>
+		<message>$39F</message>
+		<rank>$FF3</rank>
+		<vote>$F8F</vote>
+		<karma>$FF0</karma>
+		<donate>$F0F</donate>
+		<admin>$FF0</admin>
+		<black>$000</black>
+		<grey>$888</grey>
+		<login>$00F</login>
+		<logina>$0C0</logina>
+		<nick>$F00</nick>
+		<interact>$FF0$I</interact>
+		<dedimsg>$28B</dedimsg>
+		<dedirec>$0B3</dedirec>
+	</colors>
+
+	<messages>
+		<!-- This entry will replace all '»' at the begin of each chat message -->
+		<chat_prefix_replacement></chat_prefix_replacement>
+
+		<!-- init messages -->
+		<startup>{#server}» {#highlite}LASECO/{1}{#server} build {#highlite}{2}{#server} running on {#highlite}{3}{#server}:{#highlite}{4}{#server}</startup>
+		<welcome>{#server}» {#welcome}Welcome {#highlite}{1}{#welcome} to {#highlite}{2}$z$s{br}{#server}» {#welcome}This server uses {#highlite}LASECO/{3}{#welcome} to manage your records.</welcome>
+		<warning>$s{#welcome}This is an administrative warning.{br}{br}$gWhatever you wrote is against our server's{br}policy. Not respecting other players, or{br}using offensive language might result in a{br}{#welcome}kick, or ban {#message}the next time.{br}{br}$gThe server administrators.</warning>
+
+		<!-- record misc. messages -->
+		<ranking_record2>{#rank}{1}{#message}.{#timelite}{2}{#message}, </ranking_record2>
+		<ranking_record>{#rank}{1}{#message}.{#timelite}{2}{#message}[{#timelite}{3}{#message}], </ranking_record>
+
+		<!-- record relation messages -->
+		<first_record>{#server}» {#record}The first Local record is: </first_record>
+		<last_record>{#server}» {#record}The last Local record is: </last_record>
+		<diff_record>{#server}» {#record}Difference between {1}{#record} and {2}{#record} is: {#highlite}{3}</diff_record>
+		<summary>{#server}» {#highlite}{1} $z$s{#record}has {#highlite}{2}{#record} Local record{3}, the top {4} being: </summary>
+		<sum_entry>{#highlite}{1} {#record}rec{2} #{#rank}{3}{#record}, </sum_entry>
+
+		<!-- ranking messages -->
+		<ranking_record_new>{#rank}{1}{#message}.{#highlite}{2}{#message}[{#highlite}{3}{#message}], </ranking_record_new>
+
+		<!-- win messages -->
+		<wins>{#server}» {#record}You have already won {#highlite}{1}{#record} race{2}</wins>
+		<wins_other>{#server}» {#record}Player {#highlite}{1}{#record} has won {#highlite}{2}{#record} race{3}</wins_other>
+		<win_new>{#server}» {#record}Congratulations, you won your {#highlite}{1}{#record}. race!</win_new>
+		<win_multi>{#server}» {#record}Congratulations, {#highlite}{1}{#record} won his/her {#highlite}{2}{#record}. race!</win_multi>
+
+		<!-- muting messages -->
+		<mute>{#server}» Player {#highlite}{1}$z$s{#server} is muted!</mute>
+		<unmute>{#server}» Player {#highlite}{1}$z$s{#server} is unmuted!</unmute>
+		<muted>{#server}» {#highlite}{1}{#error} disabled because you are on the global mute list!</muted>
+
+		<!-- playtime/map messages -->
+		<playtime>{#server}» Current map {#highlite}{1}{#server} has been played for {#highlite}{2}</playtime>
+		<playtime_finish>{#server}» Current map {#highlite}{1}{#server} finished after {#highlite}{2}</playtime_finish>
+		<playtime_replay> {#server}({#highlite}{1}{#server} replay{2}, total {#highlite}{3}{#server})</playtime_replay>
+		<map>{#server}» Current map {#highlite}{1} {#server}by {#highlite}{2} {#server}Author: {#highlite}{3} {#server}Gold: {#highlite}{4} {#server}Silver: {#highlite}{5} {#server}Bronze: {#highlite}{6} {#server}Cost: {#highlite}{7}</map>
+		<current_map>{#server}» Current map {#highlite}{1} {#server}by {#highlite}{2} {#server}Author: {#highlite}{3}</current_map>
+		<next_map>{#server}» The next Map will be: {#timelite}[{1}] {#highlite}{2}</next_map>
+
+		<!-- relay messages -->
+		<no_relays>{#server}» {#error}No relay servers connected</no_relays>
+		<relaymaster>{#server}» This server relays master server: {#highlite}{1}{#server} ({#highlite}{2}{#server})</relaymaster>
+		<notonrelay>{#server}» {#error}Command unavailable on relay server</notonrelay>
+
+		<!-- connection messages -->
+		<banip_dialog>{#welcome}Your IP was banned from this server.$z</banip_dialog>
+		<banip_error>{#welcome}Could not connect:{br}{br}Your IP was banned from this server!</banip_error>
+		<client_dialog>{#welcome}Obsolete client version, please $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]upgrade$l.$z</client_dialog>
+		<client_error>{#welcome}Obsolete client version!{br}Please upgrade to the $l[http://www.tm-forum.com/viewtopic.php?p=139752#p139752]latest version$l.</client_error>
+		<connect_dialog>{#welcome}Connection problem, please retry.$z</connect_dialog>
+		<connect_error>{#welcome}$sThis is an administrative notice.$z{br}{br}UASECO encountered a very rare player connection{br}problem. Please re-join the server to correct it.{br}Apologies for the inconvenience.{br}{br}$sThe server administrators.</connect_error>
+
+		<!-- miscellaneous messages -->
+		<song>{#server}» Map {#highlite}{1} {#server}plays song: {#highlite}{2}</song>
+		<mod>{#server}» Map {#highlite}{1} {#server}uses mod: {#highlite}{2} {#server}({#highlite}{3}{#server})</mod>
+		<planets>{#server}» Server {#highlite}{1}$z$s {#server}owns {#highlite}{2} {#server}planets!</planets>
+		<round>{#server}» $n{#message}Round {#highlite}{1}{#message}: </round>
+		<no_admin>{#server}» {#error}You have to be in admin list to do that!</no_admin>
+	</messages>
+
+	<!-- Show or hide the load status widget while UASECO startup -->
+	<show_load_status>false</show_load_status>
+
+	<!--
+	Setup a timeout to make sure that UASECO or a Plugin does not hang
+	//-->
+	<script_timeout>120</script_timeout>
+
+	<!--
+	Setup the PHP "memory_limit" for UASECO
+	//-->
+	<memory_limit>256M</memory_limit>
+
+	<!--
+	Developer options - leave unchanged unless developing plugins
+	//-->
+	<developer_options>
+		<debug>false</debug>
+
+		<log_events>
+			<common>true</common>
+			<registered_types>false</registered_types>
+			<all_types>false</all_types>
+		</log_events>
+
+		<force_maplist_update>false</force_maplist_update>
+		<write_documentation>false</write_documentation>
+	</developer_options>
+</settings>

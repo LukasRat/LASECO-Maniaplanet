@@ -1,0 +1,10 @@
+# Ignore runtime data mounts if run locally
+Logs/
+Maps/
+Config/
+Replays/
+Backups/
+build_debug.log
+uaseco_boot.log
+.env
+.DS_Store

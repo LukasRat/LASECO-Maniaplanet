@@ -1,0 +1,12 @@
+<manialink id="UASECO-3" version="3">
+<frame pos="-30.25 82.875" z-index="0">
+<quad size="57.5 7.875" style="%STYLE%" substyle="%SUBST%"/>
+<quad pos="2.5 -1.125" z-index="2" size="7.5 5.625" style="Icons64x64_1" substyle="ClipRewind" action="PluginManialinks?Action=21"/>
+<quad pos="10 -1.125" z-index="2" size="7.5 5.625" style="Icons64x64_1" substyle="ClipPause" action="PluginManialinks?Action=22"/>
+<quad pos="17.5 -1.125" z-index="2" size="7.5 5.625" style="Icons64x64_1" substyle="ClipPlay" action="PluginManialinks?Action=23"/>
+<quad pos="25 -1.125" z-index="2" size="7.5 5.8125" style="Icons64x64_1" substyle="Refresh" action="PluginManialinks?Action=24"/>
+<quad pos="32.5 -0.1875" z-index="2" size="8.75 7.5" style="Icons64x64_1" substyle="ArrowGreen" action="PluginManialinks?Action=25"/>
+<quad pos="40 -0.1875" z-index="2" size="8.75 7.5" style="Icons64x64_1" substyle="ArrowRed" action="PluginManialinks?Action=26"/>
+<quad pos="48 -0.375" z-index="2" size="7.5 6.5625" style="Icons64x64_1" substyle="Buddy" action="PluginManialinks?Action=27"/>
+</frame>
+</manialink>

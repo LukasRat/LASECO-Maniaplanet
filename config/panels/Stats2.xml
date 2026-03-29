@@ -1,0 +1,22 @@
+<manialink id="UASECO-9" version="3">
+<frame pos="-159.75 -41.25" z-index="0">
+<stylesheet>
+<style class="labels" textsize="1" scale="1" textcolor="DDDF"/>
+</stylesheet>
+<quad pos="5 0" z-index="0" size="25 4.125" style="%STYLE%" substyle="%SUBST%"/>
+<label pos="32.8125 -0.3" size="20 3.75" halign="center" textcolor="ffc" text="Your Stats"/>
+<quad pos="0 -3.5625" size="35 24.375" z-index="0" style="%STYLE%" substyle="%SUBST%"/>
+<label pos="17 -5.0625" class="labels" halign="right" text="Rank:"/>
+<label pos="18 -5.0625" class="labels" size="15 3.75" textcolor="fff" text="%RANK%"/>
+<label pos="17 -8.8125" class="labels" halign="right" text="Avg:"/>
+<label pos="18 -8.8125" class="labels" textcolor="fff" text="%AVG%"/>
+<label pos="17 -12.5625" class="labels" halign="right" text="Records:"/>
+<label pos="18 -12.5625" class="labels" textcolor="fff" text="%RECS%"/>
+<label pos="17 -16.3125" class="labels" halign="right" text="Wins:"/>
+<label pos="18 -16.3125" class="labels" textcolor="fff" text="%WINS%"/>
+<label pos="17 -20.0625" class="labels" halign="right" text="Played:"/>
+<label pos="18 -20.0625" class="labels" textcolor="fff" text="%PLAY%"/>
+<label pos="17 -23.8125" class="labels" halign="right" text="Donations:"/>
+<label pos="18 -23.8125" class="labels" textcolor="fff" text="%DONS%"/>
+</frame>
+</manialink>

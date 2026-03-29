@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<settings>
+
+	<!--
+	2 = in message window, 1 = in chat, 0 = none
+	//-->
+	<show_records>1</show_records>
+</settings>
